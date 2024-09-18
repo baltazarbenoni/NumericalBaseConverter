@@ -1,15 +1,19 @@
 'use strict';
 
-const form = document.getElementById('button');
+const form = document.getElementById('runapp');
 const alphabet = 'abcdefghijklmnopqrstuvxyz';
 
-form.addEventListener("click", assignConvertableValues);
-form.addEventListener("click", getNewNumber);
+form.addEventListener('submit', function(event) {
+    event.preventDefault;
+    assignConvertableValues;
+    getNewNumber;
+    });
 
 function assignConvertableValues() {
-    const numberToOperateUpon = parseInt(document.getElementById("orgnum"));
-    const numericalBase = parseInt(document.getElementById("base"));
+    const numberToOperateUpon = parseInt(document.getElementById("orgnum").value);
+    const numericalBase = parseInt(document.getElementById("base").value);
     const exp = getExponent(numericalBase, numberToOperateUpon);
+    document.getElementById('answer').textContent = numericalBase;
 }
 
 function getExponent(a, b) {
@@ -51,7 +55,7 @@ function getNewNumber() {
     for (let x of list) {
         answer += x;
     }
-    document.getElementById('answer').innerHTML = answer;
+    document.getElementById('answer').textContent = answer;
     alert(answer);
 }
 function getNumericalSymbols(number) {
