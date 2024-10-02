@@ -2,8 +2,9 @@
 
 const form = document.getElementById('runapp');
 const alphabet = 'abcdefghijklmnopqrstuvxyz';
+const exp = 0; 
 
-form.addEventListener('submit', function(event) {
+form.addEventListener("submit", function(event) {
     event.preventDefault;
     assignConvertableValues;
     getNewNumber;
@@ -12,8 +13,7 @@ form.addEventListener('submit', function(event) {
 function assignConvertableValues() {
     const numberToOperateUpon = parseInt(document.getElementById("orgnum").value);
     const numericalBase = parseInt(document.getElementById("base").value);
-    const exp = getExponent(numericalBase, numberToOperateUpon);
-    document.getElementById('answer').textContent = numericalBase;
+    exp = getExponent(numericalBase, numberToOperateUpon);
 }
 
 function getExponent(a, b) {
